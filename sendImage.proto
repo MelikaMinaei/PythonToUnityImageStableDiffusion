@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package sendImage;
+
+service ImageService {
+  rpc SendImage (ImageRequest) returns (ImageResponse);
+}
+
+message ImageRequest {
+  string name = 1;
+}
+
+message ImageResponse {
+  bytes image_data = 1;
+}
