@@ -31,7 +31,7 @@ For example, to send a simple hello message, write a proto file like this:
 ```syntax = "proto3";
 package helloworld;
 service HelloService {
-    `rpc SayHello (HelloRequest) returns (HelloReply) {}`
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
 }
 
 message HelloRequest {
@@ -68,20 +68,20 @@ message HelloReply {
 gRPC services and messages between clients and servers are defined in proto files. The Protobuf compiler, protoc, generates client and server code that loads the .proto file into the memory at runtime and uses the in-memory schema to serialize/deserialize the binary message. After code generation, each message is exchanged between the client and remote service.
 Parsing with Protobuf requires fewer CPU resources since data is converted into a binary format, and encoded messages are lighter in size. So, messages are exchanged faster, even in machines with a slower CPU, such as mobile devices.
 ## Diffusion Model Setup Instruction
-1- Install Anaconda on Windows using the following link: 
+1. Install Anaconda on Windows using the following link: 
 https://docs.anaconda.com/free/anaconda/install/windows/
-2- After the installation, search for “Anaconda Prompt” in your windows search bar and open 
+2. After the installation, search for “Anaconda Prompt” in your windows search bar and open 
 the anaconda terminal. 
-3- Create a Conda environment using the following command (you can choose the version of 
+3. Create a Conda environment using the following command (you can choose the version of 
 the python as you wish. Mine is 3.8.5 but I believe any version after this should work without 
 any problem): 
-conda create -n myenv python=3.9 
-4- Then, install the Pytorch library using the following command: 
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 
-5- Then, install the diƯusers library and other required packages using the following 
-command: 
-pip install diffusers transformers accelerate scipy safetensors 
-6- Then, run the python script (Stable_DiƯ_Test.py)
+`conda create -n myenv python=3.9`
+4. Then, install the Pytorch library using the following command:<br/>
+`pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`
+5. Then, install the diffusers library and other required packages using the following 
+command:<br/>
+`pip install diffusers transformers accelerate scipy safetensors`
+6. Then, run the python script (Stable_DiU_Test.py)
 
 Stable_DiU_Test.py script:
 ```import torch
@@ -102,3 +102,6 @@ image = pipe(prompt).images[0]
     
 image.save(f"./{prompt}.png")
 ```
+## Credits and Acknowledgements
+- [AmirHossein Zamani](<https://github.com/AHHHZ975/>) for [Diffusion Model Setup Instruction](#diffusion-model-setup-instruction)
+- [Brief Description of Protobuffers Used in gRPC](<https://www.wallarm.com/what/the-concept-of-grpc#:~:text=gRPC%20enables%20services%20to%20call,support%20for%20multiple%20programming%20languages./>)
