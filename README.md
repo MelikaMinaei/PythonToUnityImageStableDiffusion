@@ -55,7 +55,7 @@ message HelloReply {
 	6. grpc_csharp_ext.dll
 > [!TIP]
 > You can find download these files from the current project.
-7. Add grpc_csharp_plugin.exe to where your proto file is.
+7. Add grpc_csharp_plugin.exe and protoc.dll to where your proto file is.
 8. Use `protoc -I=. --csharp_out=. --grpc_out=. --plugin=protoc-gen-grpc=grpc_csharp_plugin sendImage.proto` in the command-line interface to create the gRPC C# scripts files from the proto file.<br/>This will create two C# files: SendImage.cs and SendImageGrpc.cs
 10. Add the two generated C# files in last step to the Unity project.
 11. Create your own C# files for using the channel and communicating in the Unity project.
