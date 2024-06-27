@@ -76,12 +76,14 @@ the anaconda terminal.
 the python as you wish. Mine is 3.8.5 but I believe any version after this should work without 
 any problem): 
 `conda create -n myenv python=3.9`
-4. Then, install the Pytorch library using the following command:<br/>
+Then run:
+`conda activate myenv`
+5. Then, install the Pytorch library using the following command:<br/>
 `pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118`
-5. Then, install the diffusers library and other required packages using the following 
+6. Then, install the diffusers library and other required packages using the following 
 command:<br/>
 `pip install diffusers transformers accelerate scipy safetensors`
-6. Then, run the python script (Stable_DiU_Test.py)
+7. Then, run the python script (Stable_DiU_Test.py)
 
 Stable_DiU_Test.py script:
 ```import torch
