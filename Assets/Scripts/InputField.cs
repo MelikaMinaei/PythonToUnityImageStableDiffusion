@@ -6,11 +6,16 @@ using UnityEngine;
  */
 public class InputField : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI inputField;
+    public TMP_InputField tmpInputField;
 
-    public void GetPrompt()
+    void Start()
     {
-        Debug.Log(inputField.text);
-        FindObjectOfType<ClientgRPC>().ChangeMaterial(inputField.text);
+        tmpInputField.onEndEdit.AddListener(TextMeshUpdated);
+    }
+
+    public void TextMeshUpdated(string text)
+    {
+        Debug.Log("Entered prompt in unity: " + text);
+        FindObjectOfType<ClientgRPC>().ChangeMaterial(tmpInputField.text);
     }
 }

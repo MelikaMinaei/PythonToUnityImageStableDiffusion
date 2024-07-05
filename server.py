@@ -1,3 +1,4 @@
+import os
 import grpc
 from concurrent import futures
 import sendImage_pb2
@@ -28,7 +29,12 @@ class ImageServiceServicer(sendImage_pb2_grpc.ImageServiceServicer):
         pipe = pipe.to("cuda")
         
         prompt = request.name
-        image_path = PATH+prompt+".png"
+        print(f"PROMPT: {prompt}")
+        print(len(prompt))
+    
+
+        image_path = os.path.join(PATH, f"Tileable material of {prompt}.png")
+        print(f"IMAGE PATH: {image_path}")
 
         try:
             ### Generate the image based on a textual prompt
